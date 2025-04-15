@@ -6,13 +6,8 @@
 
 ---
 
-## 📘 Course Details
 
-- **Subject Name:** Advanced Internet Programming  
-- **Student Name:** Ritik Rana  
-- **Enrollment No.:** 24MCA20279  
-- **Faculty Guide:** Ms. Deepali Saini (Assistant Professor)  
-- **Semester:** MCA (II Year)
+
 
 ---
 
