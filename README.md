@@ -95,5 +95,6 @@ This application demonstrates the principles of **Advanced Internet Programming*
 
 ### 1. 📦 Install Required Packages
 ```bash
-pip install mysql-connector-python
-pip install pillow
+pip npm install express mongoose dotenv bcrypt jsonwebtoken
+pip npm init -y
+pip node aap.js
