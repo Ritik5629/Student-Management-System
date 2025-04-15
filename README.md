@@ -106,8 +106,8 @@ This project is a **Student Management System** built using **Java (JSP/Servlets
    - Create a new database called `student_db`.
    - Run the following SQL queries to create the necessary tables:
 
-``sql
--- Create user_details table
+sql
+```Create user_details table
 CREATE TABLE user_details (
     id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(100),
@@ -127,6 +127,7 @@ CREATE TABLE student_grades (
     grade VARCHAR(10),
     FOREIGN KEY (student_id) REFERENCES user_details(id)
 );
+``` 
 ## Setup Project in NetBeans
 
 Open NetBeans IDE.
@@ -168,7 +169,7 @@ Edit
 bash
 Copy
 Edit
-/StudentManagementSystem
+``` /StudentManagementSystem
 │
 ├── /Web Pages
 │   ├── index.jsp
@@ -188,9 +189,7 @@ Edit
 │
 ├── /WEB-INF
 │   └── web.xml
-│
-└── /images
-    └── Profile pictures folder
+```
 ## 🔐 Security Highlights
 Password hashing for user credentials (e.g., MD5 or SHA)
 
