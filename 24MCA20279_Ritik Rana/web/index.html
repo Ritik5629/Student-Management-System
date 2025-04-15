@@ -1,0 +1,184 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head>     
+    <meta charset="UTF-8">     
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">     
+    <title>User Login</title>     
+    <style>         
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(120deg, #1c1c2b, #2d2d44);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-container {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 50px 40px;
+    border-radius: 20px;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.3);
+    width: 380px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: transform 0.4s ease-in-out;
+}
+
+.login-container:hover {
+    transform: scale(1.015);
+}
+
+h2 {
+    font-size: 32px;
+    color: #ffffff;
+    margin-bottom: 25px;
+    letter-spacing: 1px;
+}
+
+.input-field {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.07);
+    color: #fff;
+    font-size: 15px;
+    transition: all 0.3s ease;
+}
+
+.input-field::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.input-field:focus {
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.12);
+    border-color: #00ffdd;
+    box-shadow: 0 0 8px rgba(0, 255, 221, 0.3);
+}
+
+.login-btn {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(to right, #00c6ff, #0072ff);
+    color: white;
+    border-radius: 12px;
+    border: none;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 20px rgba(0, 114, 255, 0.4);
+    transition: all 0.3s ease;
+}
+
+.login-btn:hover {
+    background: linear-gradient(to right, #0072ff, #00c6ff);
+    box-shadow: 0 6px 24px rgba(0, 114, 255, 0.6);
+}
+
+.register-btn {
+    width: 100%;
+    padding: 14px;
+    margin-top: 12px;
+    background: linear-gradient(to right, #f7971e, #ffd200);
+    color: white;
+    border-radius: 12px;
+    border: none;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 20px rgba(255, 210, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.register-btn:hover {
+    background: linear-gradient(to right, #ffd200, #f7971e);
+    box-shadow: 0 6px 24px rgba(255, 210, 0, 0.6);
+}
+
+.error-message {
+    color: #ff6b6b;
+    font-size: 14px;
+    margin-top: 10px;
+    display: none;
+}
+
+.forgot-password {
+    margin-top: 14px;
+}
+
+.forgot-password a {
+    color: #80d8ff;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.forgot-password a:hover {
+    color: #00e5ff;
+}
+
+.footer {
+    margin-top: 25px;
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.7);
+}
+    </style> 
+</head> 
+<body> 
+    <!-- Login Form Container -->     
+    <div class="login-container">         
+        <h2>Login</h2>                  
+        <!-- User Login Form -->         
+        <form action="login" method="POST">             
+            <div>                 
+                <input type="text" name="email" class="input-field" placeholder="Email" required>             
+            </div>             
+            <div>                 
+                <input type="password" name="password" class="input-field" placeholder="Password" required>             
+            </div>             
+            <div>                 
+                <button type="submit" class="login-btn">Login</button>             
+            </div>                          
+            <!-- Forgot Password Link -->             
+            <div class="forgot-password">                 
+                <a href="forgot.html">Forgot Password?</a>             
+            </div> 
+            
+            <!-- Error message section -->             
+            <div class="error-message" id="error-message">                 
+                Invalid username or password. Please try again.             
+            </div>         
+        </form>          
+
+        <!-- Register Button -->         
+        <div>             
+            <button type="button" class="register-btn" onclick="window.location.href='registeration.html'">Register</button>         
+        </div>          
+
+        <div class="footer">             
+            <p>&copy; 2025 User Login Page</p>         
+        </div>     
+    </div>      
+    <script>         
+        // Function to check if there is an error in the URL parameters (you can modify this as needed)         
+        window.onload = function() {             
+            const errorMessage = document.getElementById('error-message');                          
+            // Check for an error parameter in the URL (like ?error=invalid)             
+            const urlParams = new URLSearchParams(window.location.search);             
+            const error = urlParams.get('error');                          
+            if (error === 'invalid') {                 
+                errorMessage.style.display = 'block'; // Show the error message             
+            } else {                 
+                errorMessage.style.display = 'none'; // Hide the error message if no error             
+            }         
+        };     
+    </script>  
+</body> 
+</html>

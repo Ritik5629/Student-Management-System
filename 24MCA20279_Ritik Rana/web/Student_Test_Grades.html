@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Store Student Grades</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to right, #6dd5ed, #2193b0);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            width: 100%;
+            max-width: 400px;
+            text-align: left;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 25px;
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 12px;
+            margin: 12px 0;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+
+        input:focus,
+        select:focus {
+            border-color: #2193b0;
+            outline: none;
+            box-shadow: 0 0 5px rgba(33, 147, 176, 0.5);
+        }
+
+        .btn {
+            background-color: #2193b0;
+            color: white;
+            font-size: 16px;
+            border: none;
+            border-radius: 8px;
+            padding: 12px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #176a81;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Store Student Grades</h2>
+        <form action="Student_Test_Grades" method="POST">
+            <input type="number" name="user_id" placeholder="User ID" required>
+            <input type="text" name="subject_name" placeholder="Subject Name" required>
+            <select name="grade" required>
+                <option value="" disabled selected>Select Grade</option>
+                <option value="A">A</option>
+                <option value="B">B</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+                <option value="F">F</option>
+            </select>
+            <button type="submit" class="btn">Submit Grade</button>
+        </form>
+    </div>
+</body>
+</html>
